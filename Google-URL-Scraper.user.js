@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         Google URL Scraper
 // @version      1.1
-// @homepage     https://github.com/mtfy/Google-URL-Scraper
-// @homepageURL  https://github.com/mtfy/Google-URL-Scraper
+// @homepage     https://github.com/7sck/Google-URL-Scraper
+// @homepageURL  https://github.com/7sck/Google-URL-Scraper
 // @description  Scrape raw URLs from Google Search results
-// @author       mtfy
+// @author       7sck
 // @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js
 // @match        *www.google.com/*
 // @icon         https://icons.duckduckgo.com/ip2/google.com.ico
 // @grant        none
 // @run-at       document-end
-// @copyright    2022 mtfy
+// @copyright    2024 7sck
 // @supportURL   https://github.com/mtfy/Google-URL-Scraper/issues
-// @updateURL    https://github.com/mtfy/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
-// @downloadURL  https://github.com/mtfy/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
+// @updateURL    https://github.com/7sck/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
+// @downloadURL  https://github.com/7sck/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
 // ==/UserScript==
 
 (async() => {
