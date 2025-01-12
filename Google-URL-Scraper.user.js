@@ -5,7 +5,7 @@
 // @homepageURL  https://github.com/7sck/Google-URL-Scraper
 // @description  Scrape raw URLs from Google Search results
 // @author       7sck
-// @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js
+// @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.9/clipboard.min.js
 // @match        *www.google.com/*
 // @icon         https://icons.duckduckgo.com/ip2/google.com.ico
 // @grant        none
