@@ -129,7 +129,6 @@
 						console.log(`${logger__prefix}Decoded URI components for "${url}".`);
 					}
 
-
 					if ( a[i].getAttribute('ping') !== null )
 					{
 						a[i].ping = '';
@@ -186,17 +185,17 @@
 	async function f_text(txt) {
 		const textarea = document.createElement('textarea'), div = document.createElement('div'), button = document.createElement('button');
 		div.classList.add('appbar');
-		div.classList.add('mtfy__appbar');
+		div.classList.add('7sck__appbar');
 		div.dataset.st_cnt = 'top';
-		const code = `.mtfy__appbar button { margin-top: .75em; font-size: 10px; padding: 6px 8px; font-family: 'Verdana', sans-serif; font-size: 14px; border: 1px solid #454545; border-radius: 7px; }.mtfy__appbar { display:block !important;margin-bottom:2.3em;width: 60%; height: 240px !important; } .mtfy__txt { width: 100%; height: 195px !important; font-family: monospace, auto; !important; display:block !important; background: #00000025; padding: 8px; border: 1px solid #444; border-radius: 14px; font-size: 12px; } `, css = document.createElement('style');
+		const code = `.7sck__appbar button { margin-top: .75em; font-size: 10px; padding: 6px 8px; font-family: 'Verdana', sans-serif; font-size: 14px; border: 1px solid #454545; border-radius: 7px; }.7sck__appbar { display:block !important;margin-bottom:2.3em;width: 60%; height: 240px !important; } .7sck__txt { width: 100%; height: 195px !important; font-family: monospace, auto; !important; display:block !important; background: #00000025; padding: 8px; border: 1px solid #444; border-radius: 14px; font-size: 12px; } `, css = document.createElement('style');
 		css.innerText = code;
 		document.getElementsByTagName('head')[0].appendChild(css);
-		textarea.classList.add('mtfy__txt');
+		textarea.classList.add('7sck__txt');
 		textarea.textContent = txt;
-		textarea.id = 'mtfy__urls';
+		textarea.id = '7sck__urls';
 		div.appendChild(textarea);
 		button.dataset.clipboardAction = 'copy';
-		button.dataset.clipboardTarget = '#mtfy__urls';
+		button.dataset.clipboardTarget = '#7sck__urls';
 		button.innerText = 'Copy to clipboard';
 		try {
 			const clipBoard = new ClipboardJS(button);
