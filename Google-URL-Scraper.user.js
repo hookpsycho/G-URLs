@@ -11,7 +11,7 @@
 // @grant        none
 // @run-at       document-end
 // @copyright    2024 7sck
-// @supportURL   https://github.com/mtfy/Google-URL-Scraper/issues
+// @supportURL   https://github.com/7sck/Google-URL-Scraper/issues
 // @updateURL    https://github.com/7sck/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
 // @downloadURL  https://github.com/7sck/Google-URL-Scraper/raw/main/Google-URL-Scraper.user.js
 // ==/UserScript==
