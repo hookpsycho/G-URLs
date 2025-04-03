@@ -1,4 +1,4 @@
-# G-URLs
+# G-URLs - v2.0.1
 
 > A lightweight userscript that extracts clean, tracking-free URLs from Google search results.
 
@@ -11,9 +11,9 @@
 - Clean dark-themed interface
 - Fast and lightweight
 
-## Showcase (Old)
+## Showcase (OLD)
 
-![Proof of Concept](https://i.imgur.com/WXkXhyK.gif)
+![Showcase](https://i.imgur.com/WXkXhyK.gif)
 
 ## Installation
 
