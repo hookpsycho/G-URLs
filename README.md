@@ -1,5 +1,7 @@
 # G-URLs
+
 ![Version](https://img.shields.io/badge/Version-2.0.1-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 > A lightweight userscript that extracts clean, tracking-free URLs from Google search results.
 
@@ -41,3 +43,7 @@ When you search on Google, G-URLs:
 - Provides direct access to destination URLs
 - Eliminates Google's redirection system
 - Prevents tracking of your clicks and browsing habits
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
