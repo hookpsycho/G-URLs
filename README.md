@@ -11,7 +11,7 @@
 - Clean dark-themed interface
 - Fast and lightweight
 
-## Showcase
+## Showcase (Old)
 
 ![Proof of Concept](https://i.imgur.com/WXkXhyK.gif)
 
