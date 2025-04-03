@@ -4,6 +4,7 @@
 // @description  Extract clean URLs from Google Search results
 // @author       0hook
 // @match        *www.google.com/*
+// @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js
 // @run-at       document-end
 // @icon         https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png
 // @updateURL    https://github.com/0hook/G-URLs/raw/main/G-URLs.js
