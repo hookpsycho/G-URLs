@@ -18,12 +18,12 @@
 ## Installation
 
 1. **Install a userscript manager extension**:
-   - [Tampermonkey](https://www.tampermonkey.net/) (recommended)
+   - [Tampermonkey](https://www.tampermonkey.net/) (Recommended)
    - [Violentmonkey](https://violentmonkey.github.io/)
    - [Greasemonkey](https://www.greasespot.net/)
 
 2. **Install G-URLs**:
-   - [Click here to install](https://github.com/0hook/G-URLs/raw/main/G-URLs.user.js) (automatically opens in your userscript manager)
+   - [Click here to install](https://github.com/0hook/G-URLs/raw/main/G-URLs.js)
 
 ## How It Works
 
