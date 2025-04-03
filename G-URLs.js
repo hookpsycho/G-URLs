@@ -1,72 +1,66 @@
 // ==UserScript==
 // @name         G-URLs
 // @version      2.0.1
-// @homepage     https://github.com/0hook/G-URLs
-// @homepageURL  https://github.com/0hook/G-URLs
 // @description  Extract clean URLs from Google Search results
 // @author       0hook
-// @require      https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.9/clipboard.min.js
 // @match        *www.google.com/*
-// @icon         https://icons.duckduckgo.com/ip2/google.com.ico
-// @grant        none
 // @run-at       document-end
-// @copyright    2025 0hook
-// @supportURL   https://github.com/0hook/G-URLs/issues
+// @icon         https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png
 // @updateURL    https://github.com/0hook/G-URLs/raw/main/G-URLs.js
 // @downloadURL  https://github.com/0hook/G-URLs/raw/main/G-URLs.js
 // ==/UserScript==
 
 (() => {
-	const LOGGER_PREFIX = atob('Z2l0aHViLmNvbS8waG9vaw==') + '\t'
-	const STORAGE_CLEANUP_INTERVAL = 665
-	const EVENT_LISTENER_REMOVAL_DELAY = 301
-	const STORAGE_ITEMS_TO_REMOVE = [
+	const PREFIX = atob('Z2l0aHViLmNvbS8waG9vaw==') + '\t'
+	const STORAGE_CLEANUP = 665
+	const EVENT_LISTENER = 301
+	const STORAGE_ITEMS = [
 		'sb_wiz.zpc.gws-wiz-serp.',
 		'_grecaptcha'
 	]
 
-	function isUrlEncoded(uri) {
+	function URLEncoded(uri) {
 		if (typeof uri !== 'string') return false
 		try {
-			return decodeURIComponent(uri) !== uri
+			return URLComponent(uri) !== uri
 		} catch {
 			return false
 		}
 	}
 
 	function log(message, type = 'info') {
-		const prefix = `${LOGGER_PREFIX}${message}`
+		const Prefix = `${PREFIX}${message}`
 		switch (type) {
 			case 'error':
-				console.error(prefix)
+				console.error(Prefix)
 				break
 			case 'warn':
-				console.warn(prefix)
+				console.warn(Prefix)
 				break
 			default:
-				console.log(prefix)
+				console.log(Prefix)
 		}
 	}
 
-	function cleanupLocalStorage() {
+	function CleanStorage() {
 		if (!window?.localStorage) return
 
 		const interval = setInterval(() => {
-			if (!STORAGE_ITEMS_TO_REMOVE.length) {
+			if (!STORAGE_ITEMS.length) {
 				clearInterval(interval)
 				return
 			}
 
-			STORAGE_ITEMS_TO_REMOVE.forEach(item => {
+			STORAGE_ITEMS.forEach(item => {
 				if (localStorage.getItem(item) !== null) {
 					localStorage.removeItem(item)
 					log(`Removed item "${item}" from window.localStorage`)
 				}
 			})
-		}, STORAGE_CLEANUP_INTERVAL)
+		}, STORAGE_CLEANUP)
 	}
 
-	function removeTrackingEventListeners() {
+	function Tracking() {
 		setTimeout(() => {
 			try {
 				const selector = 'div#search>div'
@@ -85,10 +79,10 @@
 			} catch (err) {
 				log(`Error removing event listeners: ${err.message}`, 'error')
 			}
-		}, EVENT_LISTENER_REMOVAL_DELAY)
+		}, EVENT_LISTENER)
 	}
 
-	function removePeopleSearchForBox() {
+	function SearchBox() {
 		const div = document.querySelector('#rso div>div>div[data-initq]')
 		if (div) {
 			div.remove()
@@ -97,23 +91,23 @@
 		return false
 	}
 
-	function processUrl(url) {
+	function URLProcess(url) {
 		if (!url) return null
 
-		let processedUrl = url
+		let URLProcessed = url
 			.replace(/^\/url\?(?:.*)?url=/g, '')
 			.replace(/(?:&ved=[A-Za-z0-9_-]{10,60})?(?:&cshid=[0-9]*)?$/g, '')
 			.trim()
 
-		if (isUrlEncoded(processedUrl)) {
-			processedUrl = decodeURIComponent(processedUrl)
-			log(`Decoded URI components for "${processedUrl}"`)
+		if (URLEncoded(URLProcessed)) {
+			URLProcessed = URLComponent(URLProcessed)
+			log(`Decoded URI components for "${URLProcessed}"`)
 		}
 
-		return processedUrl
+		return URLProcessed
 	}
 
-	function createResultsUI(text) {
+	function Results(text) {
 		const container = document.createElement('div')
 		container.classList.add('url-scraper__container')
 
@@ -202,9 +196,9 @@
 		document.body.appendChild(container)
 	}
 
-	async function scrapeUrls() {
+	async function URLSScrape() {
 		try {
-			await removePeopleSearchForBox()
+			await SearchBox()
 			const links = document.querySelectorAll('#search div>div>div>a[href]')
 
 			if (!links.length) {
@@ -219,7 +213,7 @@
 
 				let url = ''
 				if (link.getAttribute('ping')) {
-					url = processUrl(link.getAttribute('ping'))
+					url = URLProcess(link.getAttribute('ping'))
 					log('Parsed attribute "ping"')
 				} else if (link.getAttribute('href')) {
 					url = link.href.trim()
@@ -245,8 +239,8 @@
 			})
 
 			if (urls) {
-				createResultsUI(urls)
-				await removeTrackingEventListeners()
+				Results(urls)
+				await Tracking()
 			}
 
 			const rso = document.getElementById('rso')
@@ -261,6 +255,6 @@
 	}
 
 	console.clear()
-	cleanupLocalStorage()
-	scrapeUrls()
+	CleanStorage()
+	URLSScrape()
 })()
