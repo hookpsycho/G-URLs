@@ -1,7 +1,7 @@
 # G-URLs
 
-![Version](https://img.shields.io/badge/Version-2.0.1-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Version](https://img.shields.io/badge/Version-2.0.1-blue)
 
 > A lightweight userscript that extracts clean, tracking-free URLs from Google search results.
 
