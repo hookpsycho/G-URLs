@@ -26,7 +26,7 @@
    - [Greasemonkey](https://www.greasespot.net/)
 
 2. **Install G-URLs**:
-   - [Click here to install](https://github.com/0hook/G-URLs/raw/main/G-URLs.js)
+   - [Click here to install](https://github.com/hookpsycho/G-URLs/raw/main/G-URLs.js)
 
 ## How It Works
 
